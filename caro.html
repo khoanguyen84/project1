@@ -24,11 +24,16 @@
         document.getElementById("btnPlayer1").removeAttribute('disabled');
         document.getElementById("btnPlayer2").setAttribute('disabled','true');
 
-        data = "<table width = 200 heght = 200 cellpading = 3 cellspacing = 1 border= 1>";
-        for (let i = 0; i < height; i++) {
+        data = "<table width = '700' heght = '200' cellpading = 3 cellspacing = 1 border= 1>";
+        for (let i = 0; i <= height; i++) {
             B = new Array();
-            for(let j = 0 ; j < width ; j ++){
-                B[j] = 0;
+            for(let j = 0 ; j <= width ; j ++){
+                if(i == 0)
+                    B[j] = j
+                else if(j == 0)
+                    B[j] = i
+                else
+                    B[j] = 0;
             }
             A[i] = B;
         }
@@ -46,7 +51,7 @@
         }
         while(checkValidatePosition(positionX,positionY))
         
-        data = "<table width = 200 heght = 200 cellpading = 3 cellspacing = 1 border= 1>";
+        data = "<table width = '700' heght = '200' cellpading = 3 cellspacing = 1 border= 1>";
         A[positionX][positionY] = player == 1 ? 1 : 20;
         draw();
         PlayerTurn(player);
@@ -56,10 +61,17 @@
     }
 
     function draw(){
-        for (let i = 0; i < height; i++) {
+        for (let i = 0; i <= height; i++) {
             data += "<tr>";
-            for (let j = 0; j < width; j++) {
-                data += "<td style='text-align:center; padding: 5px'>" + (A[i][j] == 1 ? 'x' : A[i][j] == 20 ? 'o' : '&nbsp;&nbsp;') + "</td>";
+            for (let j = 0; j <= width; j++) {
+                if(j == 0 || i == 0)
+                {
+                    data += "<td style='text-align:center; padding: 5px 5px;width:30px;'>" + (i == 0 && j == 0 ? '&nbsp;&nbsp;' : A[i][j]) + "</td>";    
+                }
+                else{
+                    data += "<td style='text-align:center; padding: 5px 5px; width=30px;'>" + (A[i][j] == 1 ? 'x' : A[i][j] == 20 ? 'o' : '&nbsp;&nbsp;') + "</td>";
+                }
+                    
             }
             data += "</tr>";
         }
@@ -78,16 +90,16 @@
     }
 
     function checkValidatePosition(x, y){
-        return A[x][y] != 0;
+        return A[x][y] != 0 || (x <=0 || x >= width || y <= 0 || y >= width);
     }
 
     function checkWin(x, y, player, size){
         let conditional = player == 1 ? 1*size : 20*size;
-        if((x -1) >= 0 && (x-2) >= 0 && (A[x][y] + A[x-1][y] + A[x-2][y]) == conditional)
+        if((x -1) >0 && (x-2) >0 && (A[x][y] + A[x-1][y] + A[x-2][y]) == conditional)
         {
             return true;
         }
-        else if((x-1) >= 0 && (x+1)<height && (A[x][y] + A[x-1][y] + A[x+1][y]) == conditional)
+        else if((x-1) >0 && (x+1)<height && (A[x][y] + A[x-1][y] + A[x+1][y]) == conditional)
         {
             return true;
         }
@@ -95,11 +107,11 @@
         {
             return true;
         }
-        else if((y-1) >= 0 && (y-2) >= 0 && (A[x][y] + A[x][y-1] + A[x][y-2]) == conditional)
+        else if((y-1) >0 && (y-2) >0 && (A[x][y] + A[x][y-1] + A[x][y-2]) == conditional)
         {
             return true;
         }
-        else if((y-1) >= 0 && (y+1)< width && (A[x][y] + A[x][y-1] + A[x][y+1]) == conditional)
+        else if((y-1) >0 && (y+1)< width && (A[x][y] + A[x][y-1] + A[x][y+1]) == conditional)
         {
             return true;
         }
@@ -107,11 +119,11 @@
         {
             return true;
         }
-        else if((x-1) >=0 && (y -1) >= 0 && (x-2) >=0 && (y -2) >= 0 && (A[x][y] + A[x-1][y-1] + A[x-2][y-2]) == conditional)
+        else if((x-1) >=0 && (y -1) >0 && (x-2) >=0 && (y -2) >0 && (A[x][y] + A[x-1][y-1] + A[x-2][y-2]) == conditional)
         {
             return true;
         }
-        else if((x-1) >=0 && (y -1) >= 0 && (x + 1) < width && (y + 1) < width && (A[x][y] + A[x-1][y-1] + A[x+1][y+1]) == conditional)
+        else if((x-1) >=0 && (y -1) >0 && (x + 1) < width && (y + 1) < width && (A[x][y] + A[x-1][y-1] + A[x+1][y+1]) == conditional)
         {
             return true;
         }
@@ -119,11 +131,11 @@
         {
             return true;
         }
-        else if((x+1) < width  && (y-1) >= 0 && (x + 2) < width && (y - 2) >=0 && (A[x][y] + A[x+1][y-1] + A[x+2][y-2]) == conditional)
+        else if((x+1) < width  && (y-1) >0 && (x + 2) < width && (y - 2) >=0 && (A[x][y] + A[x+1][y-1] + A[x+2][y-2]) == conditional)
         {
             return true;
         }
-        else if((x+1) < width  && (y-1) >= 0 && (x - 1) >=0 && (y + 1) < width && (A[x][y] + A[x+1][y-1] + A[x-1][y+1]) == conditional)
+        else if((x+1) < width  && (y-1) >0 && (x - 1) >=0 && (y + 1) < width && (A[x][y] + A[x+1][y-1] + A[x-1][y+1]) == conditional)
         {
             return true;
         }
