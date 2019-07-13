@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body onload="start()">
+    <div style="margin: 0px auto; width:auto;">
+        <h3>Caro Game Simple</h3>
+        <div id="carogame"></div>
+        <input type="button" id="btnPlayer1" value="Player 1" onclick="changeValue(1)">
+        <input type="button" id="btnPlayer2" value="Player 2" onclick="changeValue(2)">
+        <input type="button" id="btnRestart" value="Restart" onclick="start()">
+    </div>
+</body>
+
+</html>
+<script>
+    let width = 15;
+    let height = 15;
+    let A = [];
+    let B = [];
+    let data;
+    let frame;
+    function start( ){
+        frame = document.getElementById("carogame");
+        document.getElementById("btnPlayer1").removeAttribute('disabled');
+        document.getElementById("btnPlayer2").setAttribute('disabled','true');
+
+        data = "<table width = 200 heght = 200 cellpading = 3 cellspacing = 1 border= 1>";
+        for (let i = 0; i < height; i++) {
+            B = new Array();
+            for(let j = 0 ; j < width ; j ++){
+                B[j] = 0;
+            }
+            A[i] = B;
+        }
+        draw();
+    }
+
+    function changeValue(player) {
+        let positionX;
+        let positionY;
+        do{
+            positionX = +prompt("X: ");
+            positionY = +prompt("Y: ");
+            if(checkValidatePosition(positionX,positionY))
+                alert('invalid position, please choice other position!');
+        }
+        while(checkValidatePosition(positionX,positionY))
+        
+        data = "<table width = 200 heght = 200 cellpading = 3 cellspacing = 1 border= 1>";
+        A[positionX][positionY] = player == 1 ? 1 : 20;
+        draw();
+        PlayerTurn(player);
+        if(checkWin(positionX, positionY, player, 3)){
+            frame.innerHTML += '<br/> '+ (player == 1 ? 'Player 1 ' : 'Player 2') + ' is winner <br/>';
+        };
+    }
+
+    function draw(){
+        for (let i = 0; i < height; i++) {
+            data += "<tr>";
+            for (let j = 0; j < width; j++) {
+                data += "<td style='text-align:center; padding: 5px'>" + (A[i][j] == 1 ? 'x' : A[i][j] == 20 ? 'o' : '&nbsp;&nbsp;') + "</td>";
+            }
+            data += "</tr>";
+        }
+        frame.innerHTML = data + '</table>';
+    }
+
+    function PlayerTurn(id)
+    {
+        if(id == 1){
+            document.getElementById("btnPlayer1").setAttribute('disabled','true');
+            document.getElementById("btnPlayer2").removeAttribute('disabled');
+        }else{
+            document.getElementById("btnPlayer1").removeAttribute('disabled');
+            document.getElementById("btnPlayer2").setAttribute('disabled','true');
+        }
+    }
+
+    function checkValidatePosition(x, y){
+        return A[x][y] != 0;
+    }
+
+    function checkWin(x, y, player, size){
+        let conditional = player == 1 ? 1*size : 20*size;
+        if((x -1) >= 0 && (x-2) >= 0 && (A[x][y] + A[x-1][y] + A[x-2][y]) == conditional)
+        {
+            return true;
+        }
+        else if((x-1) >= 0 && (x+1)<height && (A[x][y] + A[x-1][y] + A[x+1][y]) == conditional)
+        {
+            return true;
+        }
+        else if((x+1) <=5 && (x+2) < width && (A[x][y] + A[x+1][y] + A[x+2][y]) == conditional)
+        {
+            return true;
+        }
+        else if((y-1) >= 0 && (y-2) >= 0 && (A[x][y] + A[x][y-1] + A[x][y-2]) == conditional)
+        {
+            return true;
+        }
+        else if((y-1) >= 0 && (y+1)< width && (A[x][y] + A[x][y-1] + A[x][y+1]) == conditional)
+        {
+            return true;
+        }
+        else if((y+1) <=5 && (y+2) < width && (A[x][y] + A[x][y+1] + A[x][y+2]) == conditional)
+        {
+            return true;
+        }
+        else if((x-1) >=0 && (y -1) >= 0 && (x-2) >=0 && (y -2) >= 0 && (A[x][y] + A[x-1][y-1] + A[x-2][y-2]) == conditional)
+        {
+            return true;
+        }
+        else if((x-1) >=0 && (y -1) >= 0 && (x + 1) < width && (y + 1) < width && (A[x][y] + A[x-1][y-1] + A[x+1][y+1]) == conditional)
+        {
+            return true;
+        }
+        else if((x+1) < width  && (y+1) < width && (x + 2) < width && (y + 2) < width && (A[x][y] + A[x+1][y+1] + A[x+2][y+2]) == conditional)
+        {
+            return true;
+        }
+        else if((x+1) < width  && (y-1) >= 0 && (x + 2) < width && (y - 2) >=0 && (A[x][y] + A[x+1][y-1] + A[x+2][y-2]) == conditional)
+        {
+            return true;
+        }
+        else if((x+1) < width  && (y-1) >= 0 && (x - 1) >=0 && (y + 1) < width && (A[x][y] + A[x+1][y-1] + A[x-1][y+1]) == conditional)
+        {
+            return true;
+        }
+        else if((x-1) >=0  && (y+1) < width && (x - 2) >=0 && (y + 2) < width && (A[x][y] + A[x-1][y+1] + A[x-2][y+2]) == conditional)
+        {
+            return true;
+        }
+        return false;
+    }
+</script>
