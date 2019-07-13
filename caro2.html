@@ -89,17 +89,6 @@
         frame.innerHTML = data + '</table>';
     }
 
-    function PlayerTurn(id)
-    {
-        if(id == 1){
-            document.getElementById("btnPlayer1").setAttribute('disabled','true');
-            document.getElementById("btnPlayer2").removeAttribute('disabled');
-        }else{
-            document.getElementById("btnPlayer1").removeAttribute('disabled');
-            document.getElementById("btnPlayer2").setAttribute('disabled','true');
-        }
-    }
-
     function checkValidatePosition(x, y){
         return A[x][y] != 0 || (x <=0 || x > width || y <= 0 || y > width);
     }
