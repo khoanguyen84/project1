@@ -90,7 +90,7 @@
     }
 
     function checkValidatePosition(x, y){
-        return A[x][y] != 0 || (x <=0 || x >= width || y <= 0 || y >= width);
+        return A[x][y] != 0 || (x <=0 || x > width || y <= 0 || y > width);
     }
 
     function checkWin(x, y, player, size){
@@ -103,7 +103,7 @@
         {
             return true;
         }
-        else if((x+1) <=5 && (x+2) < width && (A[x][y] + A[x+1][y] + A[x+2][y]) == conditional)
+        else if((x+1) <= width && (x+2) <= width && (A[x][y] + A[x+1][y] + A[x+2][y]) == conditional)
         {
             return true;
         }
@@ -111,11 +111,11 @@
         {
             return true;
         }
-        else if((y-1) >0 && (y+1)< width && (A[x][y] + A[x][y-1] + A[x][y+1]) == conditional)
+        else if((y-1) >0 && (y+1)<= width && (A[x][y] + A[x][y-1] + A[x][y+1]) == conditional)
         {
             return true;
         }
-        else if((y+1) <=5 && (y+2) < width && (A[x][y] + A[x][y+1] + A[x][y+2]) == conditional)
+        else if((y+1) <= width && (y+2) <= width && (A[x][y] + A[x][y+1] + A[x][y+2]) == conditional)
         {
             return true;
         }
@@ -123,23 +123,23 @@
         {
             return true;
         }
-        else if((x-1) >=0 && (y -1) >0 && (x + 1) < width && (y + 1) < width && (A[x][y] + A[x-1][y-1] + A[x+1][y+1]) == conditional)
+        else if((x-1) >=0 && (y -1) >0 && (x + 1) <= width && (y + 1) <= width && (A[x][y] + A[x-1][y-1] + A[x+1][y+1]) == conditional)
         {
             return true;
         }
-        else if((x+1) < width  && (y+1) < width && (x + 2) < width && (y + 2) < width && (A[x][y] + A[x+1][y+1] + A[x+2][y+2]) == conditional)
+        else if((x+1) <= width  && (y+1) <= width && (x + 2) <= width && (y + 2) <= width && (A[x][y] + A[x+1][y+1] + A[x+2][y+2]) == conditional)
         {
             return true;
         }
-        else if((x+1) < width  && (y-1) >0 && (x + 2) < width && (y - 2) >=0 && (A[x][y] + A[x+1][y-1] + A[x+2][y-2]) == conditional)
+        else if((x+1) <= width  && (y-1) >0 && (x + 2) <= width && (y - 2) >=0 && (A[x][y] + A[x+1][y-1] + A[x+2][y-2]) == conditional)
         {
             return true;
         }
-        else if((x+1) < width  && (y-1) >0 && (x - 1) >=0 && (y + 1) < width && (A[x][y] + A[x+1][y-1] + A[x-1][y+1]) == conditional)
+        else if((x+1) <= width  && (y-1) >0 && (x - 1) >=0 && (y + 1) <= width && (A[x][y] + A[x+1][y-1] + A[x-1][y+1]) == conditional)
         {
             return true;
         }
-        else if((x-1) >=0  && (y+1) < width && (x - 2) >=0 && (y + 2) < width && (A[x][y] + A[x-1][y+1] + A[x-2][y+2]) == conditional)
+        else if((x-1) >=0  && (y+1) <= width && (x - 2) >=0 && (y + 2) <= width && (A[x][y] + A[x-1][y+1] + A[x-2][y+2]) == conditional)
         {
             return true;
         }
