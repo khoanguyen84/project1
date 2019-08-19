@@ -1,0 +1,11 @@
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.csprojAssemblyReference.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.csproj.CoreCompileInputs.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.AssemblyInfo.cs
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\bin\Debug\netcoreapp2.2\Example1.deps.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\bin\Debug\netcoreapp2.2\Example1.runtimeconfig.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\bin\Debug\netcoreapp2.2\Example1.runtimeconfig.dev.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\bin\Debug\netcoreapp2.2\Example1.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\bin\Debug\netcoreapp2.2\Example1.pdb
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\Example1\obj\Debug\netcoreapp2.2\Example1.pdb
