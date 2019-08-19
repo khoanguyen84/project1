@@ -1,0 +1,11 @@
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\bin\Debug\netcoreapp2.2\BaiTap5.deps.json
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\bin\Debug\netcoreapp2.2\BaiTap5.runtimeconfig.json
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\bin\Debug\netcoreapp2.2\BaiTap5.runtimeconfig.dev.json
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\bin\Debug\netcoreapp2.2\BaiTap5.dll
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\bin\Debug\netcoreapp2.2\BaiTap5.pdb
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.csprojAssemblyReference.cache
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.csproj.CoreCompileInputs.cache
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.AssemblyInfo.cs
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.dll
+C:\CodeGym\Practices\NetCore\BaiTap5\BaiTap5\BaiTap5\obj\Debug\netcoreapp2.2\BaiTap5.pdb
