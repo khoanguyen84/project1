@@ -12,5 +12,6 @@ namespace Example1.Example5.Models
         public string Author { get; set; }
         public string Content { get; set; }
         public double AverageRate { get; set; }
-    }
+        public int[] RateList { get; set; }
+}
 }

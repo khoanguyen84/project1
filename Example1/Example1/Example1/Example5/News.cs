@@ -14,8 +14,7 @@ namespace Example1.Example5
         protected string author;
         protected string content;
         protected double averageRate;
-
-        public int[] RateList = new int[3];
+        protected int[] rateList = new int[3];
         public NewsItem[] ArrayList = new NewsItem[100];
 
         public int Id { get => id; set => id = value; }
@@ -24,6 +23,7 @@ namespace Example1.Example5
         public string Author { get => author; set => author = value; }
         public string Content { get => content; set => content = value; }
         public double AverageRate { get => averageRate;}
+        public int[] RateList { get => rateList; set => rateList = value; }
         public void Display()
         {
             foreach(var newsItem in ArrayList)
@@ -40,17 +40,22 @@ namespace Example1.Example5
 
         public void Calculate()
         {
-            var total = 0.0;
-            for(int i = 0; i < RateList.Length; i++)
+            foreach(var newsItem in ArrayList)
             {
-                total += RateList[i];
+                if(newsItem != null)
+                {
+                    var total = 0.0;
+                    for (int i = 0; i < newsItem.RateList.Length; i++)
+                    {
+                        total += newsItem.RateList[i];
+                    }
+                    newsItem.AverageRate = (double)(total / newsItem.RateList.Length);
+                }
             }
-            averageRate =  (double)(total / RateList.Length);
         }
 
         public void InsertNews(int index)
         {
-            Calculate();
             var newsItem = new NewsItem()
             {
                 Id = id,
@@ -58,7 +63,8 @@ namespace Example1.Example5
                 Content = content,
                 PublishDate = publishDate,
                 Title = title,
-                AverageRate = averageRate
+                AverageRate = averageRate,
+                RateList = rateList
             };
             ArrayList[index] = newsItem;
         }

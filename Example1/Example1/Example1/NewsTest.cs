@@ -57,6 +57,8 @@ namespace Example1
                 case 3:
                     {
                         Console.WriteLine("Average rate ....");
+                        news.Calculate();
+                        news.Display();
                         break;
                     }
                 case 4:
