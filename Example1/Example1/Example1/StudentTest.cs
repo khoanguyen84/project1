@@ -36,7 +36,6 @@ namespace Example1
 
             Process(option);
         }
-
         public static void Process(int selected)
         {
             Console.Clear();
@@ -66,7 +65,6 @@ namespace Example1
             }
             InitMenu();
         }
-
         public static void CreateStudent()
         {
             var student = new StudentMark();

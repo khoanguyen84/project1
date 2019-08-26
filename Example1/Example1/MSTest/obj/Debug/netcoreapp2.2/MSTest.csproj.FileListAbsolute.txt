@@ -1,0 +1,17 @@
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\MSTest.deps.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\MSTest.runtimeconfig.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\MSTest.runtimeconfig.dev.json
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\MSTest.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\MSTest.pdb
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\Example1.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\bin\Debug\netcoreapp2.2\Example1.pdb
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.csprojAssemblyReference.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.csproj.CoreCompileInputs.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.AssemblyInfo.cs
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.csproj.CopyComplete
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.dll
+C:\CodeGym\Practices\NetCore\Example1\Example1\MSTest\obj\Debug\netcoreapp2.2\MSTest.pdb
