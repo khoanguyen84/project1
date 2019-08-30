@@ -120,6 +120,11 @@ namespace Example1
             {
                 Console.WriteLine(item.Value.Info());
             }
+
+            foreach(var item in UserList.Values)
+            {
+                Console.WriteLine(item.Info());
+            }
         }
     }
 }
