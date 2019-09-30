@@ -1,0 +1,13 @@
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\DAL.Interface.dll
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\Domain.dll
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\DAL.Interface.pdb
+C:\CodeGym\Practices\API\API\DAL\bin\Debug\netstandard2.0\Domain.pdb
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\CodeGym\Practices\API\API\DAL\obj\Debug\netstandard2.0\DAL.pdb
