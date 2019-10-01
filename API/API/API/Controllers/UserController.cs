@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BAL.Interface;
 using Domain;
+using Domain.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -19,7 +20,7 @@ namespace API.Controllers
         // GET api/values
         [HttpGet]
         [Route("api/user/gets")]
-        public IList<User> Gets()
+        public IList<UserView> Gets()
         {
             return _userService.GetAllUser();
         }
@@ -35,25 +36,25 @@ namespace API.Controllers
         // POST api/values
         [HttpPost]
         [Route("api/user/create")]
-        public void Create([FromBody] User user)
+        public bool Create([FromBody] User user)
         {
-            _userService.AddUser(user);
+            return _userService.AddUser(user);
         }
 
         // PUT api/values/5
         [HttpPut]
         [Route("api/user/update")]
-        public void Update([FromBody] User user)
+        public bool Update([FromBody] User user)
         {
-            _userService.UpdateUser(user);
+            return _userService.UpdateUser(user);
         }
 
         // DELETE api/values/5
         [HttpDelete]
-        [Route("api/user/delete/{id}")]
-        public void Delete(int id)
+        [Route("api/user/delete")]
+        public bool Delete([FromBody]UserDeleteRequest request)
         {
-            _userService.DeleteUser(id);
+            return _userService.DeleteUser(request.Id);
         }
     }
 }

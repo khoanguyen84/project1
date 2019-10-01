@@ -1,0 +1,62 @@
+﻿@model DapperMVC.Models.User.UserCreate
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<a asp-controller="User" asp-action="Index">Back to List</a>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if(TempData["Success"] != null)
+            {
+                <p class="alert alert-success" >@TempData["Success"]</p>
+            }
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserMobile" class="control-label"></label>
+                <input asp-for="UserMobile" class="form-control" />
+                <span asp-validation-for="UserMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaceBookUrl" class="control-label"></label>
+                <input asp-for="FaceBookUrl" class="form-control" />
+                <span asp-validation-for="FaceBookUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkedInUrl" class="control-label"></label>
+                <input asp-for="LinkedInUrl" class="form-control" />
+                <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TwitterUrl" class="control-label"></label>
+                <input asp-for="TwitterUrl" class="form-control" />
+                <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalWebUrl" class="control-label"></label>
+                <input asp-for="PersonalWebUrl" class="form-control" />
+                <span asp-validation-for="PersonalWebUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

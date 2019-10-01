@@ -23,7 +23,7 @@ namespace BAL
             return _userRepository.DeleteUser(userId);
         }
 
-        public IList<User> GetAllUser()
+        public IList<UserView> GetAllUser()
         {
             return _userRepository.GetAllUser();
         }

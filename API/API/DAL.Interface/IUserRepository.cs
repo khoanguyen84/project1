@@ -9,7 +9,7 @@ namespace DAL.Interface
         bool AddUser(User user);
         bool UpdateUser(User user);
         bool DeleteUser(int userId);
-        IList<User> GetAllUser();
+        IList<UserView> GetAllUser();
         User GetUserById(int userId);
     }
 }

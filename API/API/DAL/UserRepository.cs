@@ -40,9 +40,9 @@ namespace DAL
             return true;
         }
 
-        public IList<User> GetAllUser()
+        public IList<UserView> GetAllUser()
         {
-            IList<User> customerList = SqlMapper.Query<User>(con, "GetAllUsers", commandType: CommandType.StoredProcedure).ToList();
+            IList<UserView> customerList = SqlMapper.Query<UserView>(con, "GetAllUsers", commandType: CommandType.StoredProcedure).ToList();
             return customerList;
         }
 

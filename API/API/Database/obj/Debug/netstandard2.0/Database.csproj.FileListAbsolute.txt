@@ -1,0 +1,8 @@
+C:\CodeGym\Practices\API\API\Database\bin\Debug\netstandard2.0\Database.deps.json
+C:\CodeGym\Practices\API\API\Database\bin\Debug\netstandard2.0\Database.dll
+C:\CodeGym\Practices\API\API\Database\bin\Debug\netstandard2.0\Database.pdb
+C:\CodeGym\Practices\API\API\Database\obj\Debug\netstandard2.0\Database.csprojAssemblyReference.cache
+C:\CodeGym\Practices\API\API\Database\obj\Debug\netstandard2.0\Database.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\API\API\Database\obj\Debug\netstandard2.0\Database.AssemblyInfo.cs
+C:\CodeGym\Practices\API\API\Database\obj\Debug\netstandard2.0\Database.dll
+C:\CodeGym\Practices\API\API\Database\obj\Debug\netstandard2.0\Database.pdb

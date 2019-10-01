@@ -32,6 +32,8 @@ namespace API
             services.AddMvc();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICountryService, CountryService>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
