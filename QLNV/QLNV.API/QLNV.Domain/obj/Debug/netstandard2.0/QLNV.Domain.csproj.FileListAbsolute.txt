@@ -1,0 +1,8 @@
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\bin\Debug\netstandard2.0\QLNV.Domain.deps.json
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\bin\Debug\netstandard2.0\QLNV.Domain.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\bin\Debug\netstandard2.0\QLNV.Domain.pdb
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\obj\Debug\netstandard2.0\QLNV.Domain.csprojAssemblyReference.cache
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\obj\Debug\netstandard2.0\QLNV.Domain.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\obj\Debug\netstandard2.0\QLNV.Domain.AssemblyInfo.cs
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\obj\Debug\netstandard2.0\QLNV.Domain.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.Domain\obj\Debug\netstandard2.0\QLNV.Domain.pdb

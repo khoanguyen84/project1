@@ -1,0 +1,13 @@
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.DAL.deps.json
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.DAL.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.csprojAssemblyReference.cache
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.AssemblyInfoInputs.cache
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.AssemblyInfo.cs
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.DAL.Interface.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.Domain.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.DAL.pdb
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.DAL.Interface.pdb
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\bin\Debug\netstandard2.0\QLNV.Domain.pdb
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.csproj.CopyComplete
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.dll
+C:\CodeGym\Practices\QLNV\QLNV.API\QLNV.DAL\obj\Debug\netstandard2.0\QLNV.DAL.pdb
