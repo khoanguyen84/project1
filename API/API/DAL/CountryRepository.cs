@@ -27,6 +27,12 @@ namespace DAL
             return customerList;
         }
 
+        public IList<Job> GetAllJob()
+        {
+            IList<Job> jobs = SqlMapper.Query<Job>(con, "GetAllJob", commandType: CommandType.StoredProcedure).ToList();
+            return jobs;
+        }
+
         public Country GetCountryById(int countryId)
         {
             throw new NotImplementedException();

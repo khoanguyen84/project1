@@ -11,5 +11,6 @@ namespace BAL.Interface
         bool DeleteCountry(int countryId);
         IList<Country> GetAllCountry();
         Country GetCountryById(int countryId);
+        IList<Job> GetAllJob();
     }
 }

@@ -10,7 +10,8 @@ namespace DapperMVC.Models.User
     {
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public string DOB { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime DOB { get; set; }
         [Phone(ErrorMessage = "Invalid Phone number")]
         public string UserMobile { get; set; }
         [EmailAddress(ErrorMessage = "Invalid email address")]
@@ -18,6 +19,7 @@ namespace DapperMVC.Models.User
         [Url(ErrorMessage = "Invalid url")]
         public string FaceBookUrl { get; set; }
         [Url(ErrorMessage = "Invalid url")]
+        [StringLength(maximumLength:5, MinimumLength = 5, ErrorMessage ="")]
         public string LinkedInUrl { get; set; }
         [Url(ErrorMessage = "Invalid url")]
         public string TwitterUrl { get; set; }
@@ -26,5 +28,6 @@ namespace DapperMVC.Models.User
         [Display(Name ="Country")]
         public int CountryId { get; set; }
         public int JobId { get; set; }
+        public string Avatar { get; set; }
     }
 }

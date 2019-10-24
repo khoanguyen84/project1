@@ -6,7 +6,7 @@ namespace BAL.Interface
 {
     public interface IUserService
     {
-        bool AddUser(User user);
+        int AddUser(User user);
         bool UpdateUser(User user);
         bool DeleteUser(int userId);
         IList<UserView> GetAllUser();

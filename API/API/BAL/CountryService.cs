@@ -29,6 +29,11 @@ namespace BAL
             return _countryRepository.GetAllCountry();
         }
 
+        public IList<Job> GetAllJob()
+        {
+            return _countryRepository.GetAllJob();
+        }
+
         public Country GetCountryById(int countryId)
         {
             throw new NotImplementedException();

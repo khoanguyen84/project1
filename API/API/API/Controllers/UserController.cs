@@ -36,7 +36,7 @@ namespace API.Controllers
         // POST api/values
         [HttpPost]
         [Route("api/user/create")]
-        public bool Create([FromBody] User user)
+        public int Create([FromBody] User user)
         {
             return _userService.AddUser(user);
         }

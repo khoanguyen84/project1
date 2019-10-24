@@ -11,7 +11,7 @@ namespace DAL
 {
     public class UserRepository : BaseRepository, IUserRepository
     {
-        public bool AddUser(User user)
+        public int AddUser(User user)
         {
             try
             {
@@ -23,12 +23,15 @@ namespace DAL
                 parameters.Add("@LinkedInUrl", user.LinkedInUrl);
                 parameters.Add("@TwitterUrl", user.TwitterUrl);
                 parameters.Add("@PersonalWebUrl", user.PersonalWebUrl);
-                SqlMapper.Execute(con, "AddUser", param: parameters, commandType: CommandType.StoredProcedure);
-                return true;
+                parameters.Add("@CountryId", user.CountryId);
+                parameters.Add("@JobId", user.JobId);
+                parameters.Add("@DOB", user.DOB);
+                var id = SqlMapper.ExecuteScalar<int>(con, "AddUser", param: parameters, commandType: CommandType.StoredProcedure);
+                return id;
             }
             catch (Exception ex)
             {
-                throw ex;
+                return 0;
             }
         }
 
@@ -73,6 +76,7 @@ namespace DAL
                 parameters.Add("@LinkedInUrl", user.LinkedInUrl);
                 parameters.Add("@TwitterUrl", user.TwitterUrl);
                 parameters.Add("@PersonalWebUrl", user.PersonalWebUrl);
+                parameters.Add("@Avatar", user.Avatar);
                 SqlMapper.Execute(con, "UpdateUser", param: parameters, commandType: CommandType.StoredProcedure);
                 return true;
             }

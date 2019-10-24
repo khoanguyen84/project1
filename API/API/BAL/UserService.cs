@@ -13,7 +13,7 @@ namespace BAL
         {
             _userRepository = userRepository;
         }
-        public bool AddUser(User user)
+        public int AddUser(User user)
         {
             return _userRepository.AddUser(user);
         }

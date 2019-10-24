@@ -21,5 +21,8 @@ namespace DapperMVC.Models.User
         public string TwitterUrl { get; set; }
         [Url(ErrorMessage = "Invalid url")]
         public string PersonalWebUrl { get; set; }
+        public int CountryId { get; set; }
+        public int JobId { get; set; }
+        public DateTime DOB { get; set; }
     }
 }

@@ -29,5 +29,16 @@ namespace API.Controllers
         {
             return _countryService.GetAllCountry();
         }
+
+        /// <summary>
+        /// get all country in DB
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetJobs")]
+        public IList<Job> GetJob()
+        {
+            return _countryService.GetAllJob();
+        }
     }
 }
