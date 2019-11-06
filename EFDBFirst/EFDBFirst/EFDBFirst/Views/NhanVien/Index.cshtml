@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div>
+    <a href="javascript:void(0);" class="btn btn-dark" onclick="nhanvien.showModal()">Thêm nhân viên</a>
+</div>
+<table id="tbNhanVien" class="table">
+</table>
+
+<!-- The Modal -->
+<div class="modal" id="addEditNhanVien">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm Nhân vien</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Tên nhân viên</label>
+                    </div>
+                    <div class="col-md-8 ">
+                        <input type="text" required class="form-control" id="EmployeeName" name="EmployeeName"/>
+                    </div>
+                </div>
+                <div class="row form-group"">
+                    <div class="col-md-4">
+                        <label class="control-label">Kỹ năng</label>
+                    </div>
+                    <div class="col-md-8 ">
+                        <select class="form-control" id="Skill" name="SkillID"></select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <a href="javascript:void(0);" class="btn btn-success">Save</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section css{
+    <link href="~/lib/node_modules/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+
+
+@section scripts{
+    <script src="~/lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/nhanvien/nhanvien.js"></script>
+}

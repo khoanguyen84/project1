@@ -30,7 +30,7 @@
                 <select asp-for="SkillID" class="form-control" required>
                     @foreach (var skill in skills)
                     {
-                        <option value="@skill.Value" selected="@(skill.Value == Model.SkillID)">@skill.Name</option>
+                        <option value="@skill.Id" selected="@(skill.Id == Model.SkillID)">@skill.Name</option>
                     }
                 </select>
                 <span asp-validation-for="SkillID" class="text-danger"></span>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a href="javascript:void();">Add Employee</a>
+</p>
+<table id="tbEmployee" class="table">
+</table>
+<table id="tbEmployee" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+</table>
+
+@section css{
+    <link href="~/lib/node_modules/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+
+@section scripts{
+    <script src="~/lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/js/employee/employee.js"></script>
+}
+
+

@@ -9,7 +9,7 @@ namespace EFDBFirst.Models
     public class SkillModel
     {
         [Key]
-        public int Value { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

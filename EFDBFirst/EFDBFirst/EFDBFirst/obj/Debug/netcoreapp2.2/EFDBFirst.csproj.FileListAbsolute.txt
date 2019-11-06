@@ -5,8 +5,6 @@ C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\bin\Debug\netcoreapp2.2\EFDBF
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\bin\Debug\netcoreapp2.2\EFDBFirst.runtimeconfig.json
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\bin\Debug\netcoreapp2.2\EFDBFirst.runtimeconfig.dev.json
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\bin\Debug\netcoreapp2.2\EFDBFirst.dll
-C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.csprojAssemblyReference.cache
-C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.csproj.CoreCompileInputs.cache
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.RazorAssemblyInfo.cache
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.RazorAssemblyInfo.cs
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.AssemblyInfoInputs.cache
@@ -34,3 +32,6 @@ C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBF
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Create.cshtml.g.cs
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Details.cshtml.g.cs
 C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Edit.cshtml.g.cs
+C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Index.cshtml.g.cs
+C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\EFDBFirst.csprojAssemblyReference.cache
+C:\CodeGym\Practices\EFDBFirst\EFDBFirst\EFDBFirst\obj\Debug\netcoreapp2.2\Razor\Views\NhanVien\Index.cshtml.g.cs

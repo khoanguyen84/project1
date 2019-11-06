@@ -132,7 +132,7 @@ namespace EFDBFirst.Controllers
             var skills = _dbContext.tblSkills.Select(s => new SkillModel()
             {
                 Name = s.Title,
-                Value = s.SkillID
+                Id = s.SkillID
             }).ToList();
             return skills;
         }
