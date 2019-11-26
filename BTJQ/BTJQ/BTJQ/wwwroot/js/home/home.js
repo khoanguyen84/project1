@@ -17,7 +17,7 @@ student.drawTable = function () {
                         "<td>"+ value.dob +"</td>" +
                         "<td>"+ value.className + "</td>" +
                         "<td>" +
-                            "<a href='javascript:void(0);' class='btn btn-dark'>Edit</a> " +
+                        "<a href='javascript:void(0);' class='btn btn-dark' onclick=student.getDetail('" + value.studentId +"')>Edit</a> " +
                             "<a href='javascript:void(0);' class='btn btn-danger'>Delete</a> " +
                         "</td>" +
                         "</tr>");
@@ -28,6 +28,7 @@ student.drawTable = function () {
 };
 
 student.openAddEditModal = function () {
+    student.resetForm();
     $('#addEditModel').modal('show');
 };
 
@@ -57,31 +58,68 @@ student.initSex = function () {
 };
 
 student.save = function () {
-    var studentObj = {};
-    studentObj.FullName = $('#Fullname').val();
-    studentObj.Sex = $('#Sex').val();
-    studentObj.DOB = $('#DOB').val();
-    studentObj.ClassRoomId = $('#ClassName').val();
+    if ($('#frmAddEditStudent').valid()) {
+        var studentObj = {};
+        studentObj.FullName = $('#Fullname').val();
+        studentObj.Sex = $('#Sex').val();
+        studentObj.DOB = $('#DOB').val();
+        studentObj.ClassRoomId = $('#ClassName').val();
+        studentObj.StudentId = $('#StudentId').val();
 
+        $.ajax({
+            url: '/Home/Save',
+            method: 'POST',
+            data: JSON.stringify(studentObj),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status === 1) {
+                    $('#addEditModel').modal('hide');
+                    window.location.href = "/Home/Index";
+                }
+            }
+        });
+    }
+};
+
+
+student.getDetail = function (id) {
     $.ajax({
-        url: '/Home/Save',
-        method: 'POST',
-        data : JSON.stringify(studentObj),
+        url: '/Home/Get/' + id,
+        method: 'GET',
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
             if (data.status === 1) {
-                $('#addEditModel').modal('hide');
-                window.location.href = "/Home/Index";
+                var response = data.response;
+
+                $('#Fullname').val(response.fullName);
+                $('#DOB').val(response.dob);
+                $('#Sex').val(response.sex);
+                $('#ClassName').val(response.classRoomId);
+                $('#StudentId').val(response.studentId);
             }
+            $('#addEditModel').find('.modal-title').text('Update Student');
+            $('#addEditModel').modal('show');
         }
     });
+};
+
+student.resetForm = function () {
+    $('#Fullname').val('');
+    $('#DOB').val('');
+    $('#Sex').val('1');
+    $('#ClassName').val('1');
+    $('#StudentId').val('0');
+    $('#addEditModel').find('.modal-title').text('Create new student');
+    $("#frmAddEditStudent").validate().resetForm();
 };
 
 student.init = function () {
     student.drawTable();
     student.initClasses();
     student.initSex();
+    student.resetForm();
 };
 
 $(document).ready(function () {

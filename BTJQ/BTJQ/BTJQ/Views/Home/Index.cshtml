@@ -29,7 +29,7 @@
 <div class="modal" id="addEditModel">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form id="frmAddEditStudent">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Create new student</h4>
@@ -38,12 +38,15 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
+                    <input hidden id="StudentId" name="StudentId" value="0" />
                     <div class="row form-group">
                         <div class="col-3 col-md-4">
                             <label class="float-right">Fullname</label>
                         </div>
                         <div class="col-9 col-md-8">
-                            <input type="text" class="form-control" id="Fullname" name="Fullname" />
+                            <input type="text" class="form-control" id="Fullname" name="Fullname"
+                                   data-rule-required="true"
+                                   data-msg-required="Đây là trường bắt buộc." />
                         </div>
                     </div>
                     <div class="row form-group">
@@ -59,7 +62,8 @@
                             <label class="float-right">DOB</label>
                         </div>
                         <div class="col-9 col-md-8">
-                            <input type="datetime" class="form-control" id="DOB" name="DOB" />
+                            <input type="date"
+                                   class="form-control" id="DOB" name="DOB" />
                         </div>
                     </div>
                     <div class="row form-group">
@@ -75,8 +79,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <a href="javascripts:void(0);" 
-                       class="btn btn-outline-info" 
+                    <a href="javascripts:void(0);"
+                       class="btn btn-outline-info"
                        onclick="student.save()">Save</a>
                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
                 </div>
@@ -85,11 +89,14 @@
     </div>
 </div>
 
-@section css{ 
+@section css{
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/lib/datepicker/datepicker.css" rel="stylesheet" />*@
 }
+
 
 @section Scripts{
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @*<script src="~/lib/datepicker/datepicker.js"></script>*@
     <script src="~/js/home/home.js"></script>
 }

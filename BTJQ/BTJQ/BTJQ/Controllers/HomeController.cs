@@ -53,6 +53,30 @@ namespace BTJQ.Controllers
             
         }
         
+        public IActionResult Get(int id)
+        {
+            var student = new StudentDetail();
+            try
+            {
+                student = appDBContext.Student
+                        .Where(s => s.StudentId == id)
+                        .Select(s => new StudentDetail()
+                        {
+                            ClassRoomId = s.ClassRoomId,
+                            DOB = s.DOB,
+                            FullName = s.FullName,
+                            Sex = s.Sex ? 1 : 0,
+                            StudentId = s.StudentId
+                        }).FirstOrDefault();
+                return new JsonResult(new { status = 1, response = student });
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return new JsonResult(new { status = -1, response = student });
+        }
+
         public IActionResult GetClasses()
         {
             var classes = new List<ClassItem>();
@@ -79,25 +103,52 @@ namespace BTJQ.Controllers
             {
                 if(model != null)
                 {
-                    var student = new Student()
+                    //create new student
+                    if(model.StudentId == 0)
                     {
-                        ClassRoomId = model.ClassRoomId,
-                        DOB = model.DOB,
-                        FullName = model.FullName,
-                        Sex = model.Sex == 1 ? true : false,
-                        StudentId = model.StudentId
-                    };
-                    appDBContext.Student.Add(student);
-
-                    var saveResult = appDBContext.SaveChanges();
-                    if(saveResult > 0)
-                    {
-                        return new JsonResult(new
+                        var student = new Student()
                         {
-                            status = 1,
-                            message = "Student has been created successfully."
-                        });
+                            ClassRoomId = model.ClassRoomId,
+                            DOB = model.DOB,
+                            FullName = model.FullName,
+                            Sex = model.Sex == 1 ? true : false,
+                            StudentId = model.StudentId
+                        };
+                        appDBContext.Student.Add(student);
+
+                        var saveResult = appDBContext.SaveChanges();
+                        if (saveResult > 0)
+                        {
+                            return new JsonResult(new
+                            {
+                                status = 1,
+                                message = "Student has been created successfully."
+                            });
+                        }
                     }
+                    else //update student by StudentId
+                    {
+                        var studentDetail = appDBContext.Student.
+                                            Where(s => s.StudentId == model.StudentId).
+                                            FirstOrDefault();
+                        studentDetail.FullName = model.FullName;
+                        studentDetail.Sex = model.Sex == 1;
+                        studentDetail.ClassRoomId = model.ClassRoomId;
+                        studentDetail.DOB = model.DOB;
+                        studentDetail.StudentId = model.StudentId;
+
+                        appDBContext.Student.Update(studentDetail);
+                        var updateResult = appDBContext.SaveChanges();
+                        if (updateResult > 0)
+                        {
+                            return new JsonResult(new
+                            {
+                                status = 1,
+                                message = "Student has been updated successfully."
+                            });
+                        }
+                    }
+                    
                 }
                 return new JsonResult(new
                 {

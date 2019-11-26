@@ -33,3 +33,4 @@ C:\CodeGym\Practices\BTJQ\BTJQ\BTJQ\obj\Debug\netcoreapp2.2\BTJQ.pdb
 C:\CodeGym\Practices\BTJQ\BTJQ\BTJQ\obj\Debug\netcoreapp2.2\BTJQ.csproj.CopyComplete
 C:\CodeGym\Practices\BTJQ\BTJQ\BTJQ\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
 C:\CodeGym\Practices\BTJQ\BTJQ\BTJQ\obj\Debug\netcoreapp2.2\Razor\Views\Account\_ViewStart.cshtml.g.cs
+C:\CodeGym\Practices\BTJQ\BTJQ\BTJQ\bin\Debug\netcoreapp2.2\libman.json
