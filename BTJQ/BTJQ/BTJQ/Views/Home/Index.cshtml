@@ -8,7 +8,7 @@
        class="btn btn-outline-success"
        onclick="student.openAddEditModal()">Create New</a>
 </div>
-<div class="row">
+@*<div class="row">
     <table class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
@@ -23,6 +23,13 @@
         <tbody id="tbStudent">
         </tbody>
     </table>
+</div>*@
+
+<div class="row" style="width:100%">
+    <div class="col-12">
+        <table class="table table-bordered table-hover table-striped" style="width:100%;" id="tbStudent">
+        </table>
+    </div>
 </div>
 
 <!-- The Modal -->
@@ -75,6 +82,14 @@
                             </select>
                         </div>
                     </div>
+                    <div class="row form-group">
+                        <div class="col-3 col-md-4">
+                            <label class="float-right">Avatar</label>
+                        </div>
+                        <div class="col-9 col-md-8">
+                            <input type="file" class="form-control" id="Avatar" name="Avatar" />
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Modal footer -->
@@ -91,12 +106,13 @@
 
 @section css{
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    @*<link href="~/lib/datepicker/datepicker.css" rel="stylesheet" />*@
+    <link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />
 }
 
 
 @section Scripts{
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    @*<script src="~/lib/datepicker/datepicker.js"></script>*@
+    <script src="~/lib/bootbox.js/bootbox.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
     <script src="~/js/home/home.js"></script>
 }

@@ -1,30 +1,75 @@
 ﻿var student = student || {};
 
 student.drawTable = function () {
-    $.ajax({
-        url: '/Home/Gets',
-        method: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function (data) {
-            if (data.status === 1) {
-                var response = data.response;
-                $.each(response, function (index, value) {
-                    $('#tbStudent').append("<tr>" +
-                        "<td>"+ value.studentId +"</td>" +
-                        "<td>"+ value.fullName +"</td>" +
-                        "<td>"+ value.sex +"</td>" +
-                        "<td>"+ value.dob +"</td>" +
-                        "<td>"+ value.className + "</td>" +
-                        "<td>" +
-                        "<a href='javascript:void(0);' class='btn btn-dark' onclick=student.getDetail('" + value.studentId +"')>Edit</a> " +
-                            "<a href='javascript:void(0);' class='btn btn-danger'>Delete</a> " +
-                        "</td>" +
-                        "</tr>");
-                });
-            }
-        }
-    });
+    $("#tbStudent").DataTable({
+        "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)  
+        "orderMulti": false, // for disable multiple column at once  
+        "ajax": {
+            "url": "/Home/Gets",
+            "type": "POST",
+            "datatype": "json"
+        },
+        "columns": [
+            {
+                "data": "fullName",
+                "name": "FullName",
+                "autoWidth": true,
+                "title" : "Full Name"
+            },
+            {
+                "data": "dob",
+                "name": "DOB",
+                "autoWidth": true,
+                "title": "DOB"
+            },
+            {
+                "data": "sex",
+                "name": "Sex",
+                "autoWidth": true,
+                "title": "Sex"
+            },
+            {
+                "data": "className",
+                "name": "ClassName",
+                "autoWidth": true,
+                "title": "Class Name"
+            },
+            {
+                data: null,
+                render: function (data, type, row) {
+                    return "<a href='#' class='btn btn-danger' >Delete</a>";
+                }
+            },
+        ]
+
+    });  
+    //$.ajax({
+    //    url: '/Home/Gets',
+    //    method: 'GET',
+    //    dataType: 'json',
+    //    contentType: 'application/json',
+    //    success: function (data) {
+    //        if (data.status === 1) {
+    //            var response = data.response;
+    //            $('#tbStudent').empty();
+    //            $.each(response, function (index, value) {
+    //                $('#tbStudent').append("<tr>" +
+    //                    "<td>"+ value.studentId +"</td>" +
+    //                    "<td>"+ value.fullName +"</td>" +
+    //                    "<td>"+ value.sex +"</td>" +
+    //                    "<td>"+ value.dob +"</td>" +
+    //                    "<td>"+ value.className + "</td>" +
+    //                    "<td>" +
+    //                    "<a href='javascript:void(0);' class='btn btn-dark' onclick=student.getDetail('" + value.studentId +"')>Edit</a> " +
+    //                        "<a href='javascript:void(0);' class='btn btn-danger' onclick=student.delete('"+ value.studentId +"')>Delete</a> " +
+    //                    "</td>" +
+    //                    "</tr>");
+    //            });
+    //        }
+    //    }
+    //});
 };
 
 student.openAddEditModal = function () {
@@ -76,6 +121,7 @@ student.save = function () {
                 if (data.status === 1) {
                     $('#addEditModel').modal('hide');
                     window.location.href = "/Home/Index";
+                    bootbox.alert(data.message);
                 }
             }
         });
@@ -103,6 +149,38 @@ student.getDetail = function (id) {
             $('#addEditModel').modal('show');
         }
     });
+};
+
+student.delete = function (id) {
+    bootbox.confirm({
+        message: "Are you sure to delete?",
+            buttons: {
+            confirm: {
+                label: 'Yes',
+                    className: 'btn-success'
+            },
+            cancel: {
+                label: 'No',
+                    className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                $.ajax({
+                    url: '/Home/DeleteStudent/' + id,
+                    method: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.status === 1) {
+                            student.drawTable();
+                        }
+                    }
+                });
+            }
+        }
+    });
+    
 };
 
 student.resetForm = function () {

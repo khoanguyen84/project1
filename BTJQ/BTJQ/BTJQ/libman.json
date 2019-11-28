@@ -9,6 +9,14 @@
     {
       "library": "datepicker@0.6.5",
       "destination": "wwwroot/lib/datepicker/"
+    },
+    {
+      "library": "bootbox.js@5.3.2",
+      "destination": "wwwroot/lib/bootbox.js/"
+    },
+    {
+      "library": "datatables@1.10.19",
+      "destination": "wwwroot/lib/datatables/"
     }
   ]
 }

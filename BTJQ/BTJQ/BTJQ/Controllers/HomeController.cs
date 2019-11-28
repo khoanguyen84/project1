@@ -28,22 +28,69 @@ namespace BTJQ.Controllers
         {
             try 
             {
-                //LinQ
-                //Lambda
-                var students = new List<StudentModelView>();
-                students = (from s in appDBContext.Student
-                            join c in appDBContext.ClassRoom on s.ClassRoomId
-                            equals c.ClassRoomId
-                            select new StudentModelView()
-                            {
-                                ClassName = c.ClassName,
-                                DOB = s.DOB.ToString("dd/MM/yyyy"),
-                                FullName = s.FullName,
-                                Sex = s.Sex ? "Male" : "Female",
-                                StudentId = s.StudentId
-                            }).ToList();
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+                // Skiping number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+                // Sort Column Direction ( asc ,desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
 
-                return new JsonResult(new { response = students, status = 1 });
+                //Paging Size (10,20,50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+                int recordsTotal = 0;
+
+                // Getting all Customer data  
+                var customerData = (from s in appDBContext.Student
+                                    join c in appDBContext.ClassRoom on s.ClassRoomId
+                                    equals c.ClassRoomId
+                                    select new StudentModelView()
+                                    {
+                                        ClassName = c.ClassName,
+                                        DOB = s.DOB.ToString("dd/MM/yyyy"),
+                                        FullName = s.FullName,
+                                        Sex = s.Sex ? "Male" : "Female",
+                                        StudentId = s.StudentId
+                                    }).ToList();
+
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    customerData = customerData.Where(m => m.FullName.ToLower().
+                                                           Contains(searchValue.ToLower())).ToList();
+                }
+
+                //total number of rows count   
+                recordsTotal = customerData.Count();
+                //Paging   
+                var data = customerData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+                //var students = new List<StudentModelView>();
+                //students = (from s in appDBContext.Student
+                //            join c in appDBContext.ClassRoom on s.ClassRoomId
+                //            equals c.ClassRoomId
+                //            select new StudentModelView()
+                //            {
+                //                ClassName = c.ClassName,
+                //                DOB = s.DOB.ToString("dd/MM/yyyy"),
+                //                FullName = s.FullName,
+                //                Sex = s.Sex ? "Male" : "Female",
+                //                StudentId = s.StudentId
+                //            }).ToList();
+
+                //return new JsonResult(new { response = students, status = 1 });
             }
             catch (Exception ex) 
             {
@@ -165,6 +212,34 @@ namespace BTJQ.Controllers
                 });
 
             }
+        }
+
+        public IActionResult DeleteStudent(int id)
+        {
+            try
+            {
+                var student = appDBContext.Student.Find(id);
+                appDBContext.Student.Remove(student);
+                var deleteResult = appDBContext.SaveChanges();
+                if (deleteResult > 0)
+                {
+                    return new JsonResult(new
+                    {
+                        status = 1,
+                        message = "Student has been deleted successfully."
+                    });
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return new JsonResult(new
+            {
+                status = -1,
+                message = "Something went wrong, please contact administrator."
+            });
         }
     }
 

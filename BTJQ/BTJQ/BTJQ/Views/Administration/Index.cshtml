@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Administration page";
+}
+
+<h1>Administration</h1>
+
+<div class="row">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Fullname</th>
+                <th>Sex</th>
+                <th>DOB</th>
+                <th>Class Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tbAdmin">
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/wwwroot/js/administration/admin.js"></script>
+}
