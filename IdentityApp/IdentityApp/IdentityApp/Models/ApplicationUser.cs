@@ -9,5 +9,8 @@ namespace IdentityApp.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public bool Gender { get; set; }
+        public DateTime DOB { get; set; }
+        public string Address { get; set; }
     }
 }

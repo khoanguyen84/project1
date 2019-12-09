@@ -36,3 +36,6 @@ C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2
 C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Index.cshtml.g.cs
+C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\bin\Debug\netcoreapp2.2\libman.json
+C:\CodeGym\Practices\IdentityApp\IdentityApp\IdentityApp\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Dashboard\AccessDenied.cshtml.g.cs

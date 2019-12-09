@@ -38,7 +38,7 @@ namespace IdentityApp
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("DbConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(option =>
+            services.AddIdentity<ApplicationUser, ApplicationRole>(option =>
             {
                 option.Password.RequireDigit = true;
                 option.Password.RequiredLength = 6;
@@ -47,6 +47,10 @@ namespace IdentityApp
                 option.Password.RequireUppercase = true;
             }).AddEntityFrameworkStores<AppDbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Admin/Dashboard/AccessDenied");
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -77,7 +81,7 @@ namespace IdentityApp
                     template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "admin",
-                    template: "{Area=Admin}/{controller=Dashboard}/{action=Index}/{id?}");
+                    template: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
             });
         }
     }

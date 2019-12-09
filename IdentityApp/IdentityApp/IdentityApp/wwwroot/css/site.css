@@ -54,3 +54,17 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.error {
+    color: #FF0000;
+}
+.loader {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8) url("../imgs/loading.gif") 50% 50% no-repeat;
+}

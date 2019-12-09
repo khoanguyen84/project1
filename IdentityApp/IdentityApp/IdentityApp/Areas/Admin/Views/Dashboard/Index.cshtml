@@ -1,7 +1,103 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "User";
 }
 
-<h1>Index</h1>
+<h1>Users</h1>
+<div class="row mb-3">
+    <div class="col-12">
+        <a href="javascript:void(0);" class="btn btn-dark" onclick="user.openAddModel()"><i class="fa fa-plus"> Create New User</i></a>
+    </div>
+</div>
+<div class="row" style="width:100%">
+    <div class="col-12">
+        <table class="table table-bordered table-hover table-striped" style="width:100%;" id="tbUser">
+        </table>
+    </div>
+</div>
 
+<!-- The Modal -->
+<div class="modal" id="addEditModel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="frmAddEditUser">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Create new student</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input hidden id="UserId" name="UserId" value="0" />
+                    <div class="row form-group">
+                        <div class="col-3 col-md-3">
+                            <label class="float-right">UserName</label>
+                        </div>
+                        <div class="col-9 col-md-9">
+                            <input id="UserName" name="UserName" class="form-control"
+                                   data-rule-required="true" data-rule-email="true"
+                                   data-msg-required="This field is required."
+                                   data-msg-email="" readonly
+                                   type="email"/>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3 col-md-3">
+                            <label class="float-right">Gender</label>
+                        </div>
+                        <div class="col-9 col-md-9">
+                            <select id="Gender" name="Gender" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3 col-md-3">
+                            <label class="float-right">DOB</label>
+                        </div>
+                        <div class="col-9 col-md-9">
+                            <input type="date"
+                                   class="form-control" id="DOB" name="DOB" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3 col-md-3">
+                            <label class="float-right">Address</label>
+                        </div>
+                        <div class="col-9 col-md-9">
+                            <input class="form-control" id="Address" name="Address" 
+                                   data-rule-required="true"/>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3 col-md-3">
+                            <label class="float-right">Roles</label>
+                        </div>
+                        <div class="col-9 col-md-9">
+                            <select class="form-control" id="Roles" name="Roles" multiple style="width:100%" data-rule-required="true"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a href="javascripts:void(0);"
+                       class="btn btn-outline-info"
+                       onclick="user.save()">Save</a>
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section css{
+    <link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+}
+
+
+@section Scripts{
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/select2/js/select2.js"></script>
+    <script src="~/js/admin/user/user.js"></script>
+}

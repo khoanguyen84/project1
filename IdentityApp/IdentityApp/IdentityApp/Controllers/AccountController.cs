@@ -35,7 +35,10 @@ namespace IdentityApp.Controllers
                     var user = new ApplicationUser()
                     {
                         UserName = model.Email,
-                        Email = model.Email
+                        Email = model.Email,
+                        DOB = model.DOB,
+                        Gender = model.Gender,
+                        Address = model.Address
                     };
 
                     var registerResult =  await userManager.CreateAsync(user, model.Password);
@@ -69,13 +72,11 @@ namespace IdentityApp.Controllers
                 if (model != null)
                 {
                     var user = await userManager.FindByNameAsync(model.Email);
-                    
                     if (user != null)
                     {
                         var loginUser = await userManager.CheckPasswordAsync(user, model.Password);
                         if (loginUser)
                         {
-                            //await signInManager.SignInAsync(user, isPersistent: false);
                             var loginResult =  await signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: model.RememberMe, false);
                             if (loginResult.Succeeded)
                             {
